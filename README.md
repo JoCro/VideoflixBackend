@@ -109,6 +109,28 @@ All backend logic works entirely inside containers.
 - Docker Compose\
 - Optional: VS Code Live Server extension (for the frontend)
 
+## 📦 Installation
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/JoCro/Quizzly.git
+cd quizly
+```
+
+### 2️⃣ Create a virtual environment
+
+```bash
+python -m venv .env
+source .env/bin/activate
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
 ---
 
 ### 2️⃣ Create your .evn file
