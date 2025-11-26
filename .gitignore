@@ -13,8 +13,9 @@ venv/
 !.env.template
 
 # Django
-static/
-staticfiles/
+static/*
+!static/videoflix_icon.png
+
 media/
 *.log
 
