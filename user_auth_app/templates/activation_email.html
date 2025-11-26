@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            .container {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                color: #333;
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: rgba(46, 62, 223, 1);
+            color: white !important;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            }
+
+        </style>
+    </head>
+    <body style="margin:0; padding:0;">
+  <div style="
+    font-family:Arial, sans-serif;
+    padding:20px;
+    background:#ffffff;
+    color:#333333;
+    max-width:500px;
+    margin:0 auto;
+  ">
+  <img src="data:image/png;base64,{{ logo_base64|safe }}"
+     alt="VideoFlix Logo"
+     width="160"
+     style="display:block; margin:0 auto 20px auto;">
+    <h2 style="margin-top:0;">Welcome to VideoFlix!</h2>
+
+    <p>Dear User,<br>
+        <br>
+    Thank you for registering with Videoflix. To complete your registration and verify your email address, please clicke the button below:</p>
+
+  
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px; border-collapse:collapse; border-spacing:0;">
+  <tr>
+    <td align="center" style="padding:0; border:0;">
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{ activation_link }}" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="12%" strokecolor="#2E3EDF" fillcolor="#2E3EDF">
+        <w:anchorlock/>
+        <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">
+          Account aktivieren
+        </center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-- -->
+      <a href="{{ activation_link }}"
+         style="
+           display:inline-block;
+           padding:12px 20px;
+           font-size:16px;
+           font-family:Arial, sans-serif;
+           color:#ffffff !important;
+           text-decoration:none;
+           font-weight:bold;
+           border-radius:40px;
+           background-color:#2E3EDF;
+           border:none;
+           outline:none;
+           box-shadow:none;
+           mso-padding-alt:0;
+         ">
+        Activate account
+      </a>
+      <!--<![endif]-->
+    </td>
+  </tr>
+</table>
+
+
+    <p style="margin-top:20px;">
+      If you did not create an account with us, please disregard this email. <br>
+      <br>
+      Best regards,<br>
+      <br>
+      Your VideoFlix Team.
+    </p>
+  </div>
+</body>
+</html>
+
+
+        

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtualenv
+venv/
+.env
+.env.* 
+*.env
+!.env.template
+
+# Django
+static/
+staticfiles/
+media/
+*.log
+
+# HLS / Video Outputs (nicht im Repo versionieren!)
+media/hls/
+*.mp4
+*.ts
+*.m3u8
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Docker
+*.pid
+docker-data/
