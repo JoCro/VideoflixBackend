@@ -114,15 +114,14 @@ All backend logic works entirely inside containers.
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/JoCro/Quizzly.git
-cd quizly
+git clone https://github.com/JoCro/VideoflixBackend.git
 ```
 
 ### 2️⃣ Create a virtual environment
 
 ```bash
-python -m venv .env
-source .env/bin/activate
+python -m venv venv
+source venv/bin/activate
 ```
 
 ### 3️⃣ Install dependencies
@@ -133,7 +132,7 @@ pip install -r requirements.txt
 
 ---
 
-### 2️⃣ Create your .evn file
+### 2️⃣ Create your .env file
 
 - Duplicate the template: **cp .env.template .env**
 - Edit fields as needed to your new **.env-file**
