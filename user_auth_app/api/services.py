@@ -50,7 +50,7 @@ def send_activation_email(user, request):
         send_mail(
             subject=subject,
             message=plain_message,
-            from_email=getattr(settings, 'DEFAULT_FROM_EMAIL',
+            from_email=getattr(settings, 'EMAIL_HOST_USER',
                                "no-reply@example.com"),
             recipient_list=[user.email],
             html_message=html_message,
@@ -100,7 +100,7 @@ def send_password_reset_email(user, request):
         send_mail(
             subject=subject,
             message=plain_message,
-            from_email=getattr(settings, "DEFAULT_FROM_EMAIL",
+            from_email=getattr(settings, "EMAIL_HOST_USER",
                                "no-reply@example.com"),
             recipient_list=[user.email],
             html_message=html_message,
