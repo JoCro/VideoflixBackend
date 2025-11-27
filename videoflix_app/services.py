@@ -13,6 +13,12 @@ HLS_RESOLUTIONS = {
     '1080p': 1080,
 }
 
+HLS_BITRATES = {
+    '480p': '1000k',
+    '720p': '2500k',
+    '1080p': '5000k',
+}
+
 
 def generate_hls_for_video(video_id: int):
     """
@@ -35,12 +41,17 @@ def generate_hls_for_video(video_id: int):
         output_playlist = os.path.join(output_dir, 'index.m3u8')
         segment_pattern = os.path.join(output_dir, 'segment_%03d.ts')
 
+        video_bitrate = HLS_BITRATES.get(resolution, '2500k')
+
         cmd = [
             'ffmpeg',
             '-y',
             '-i', input_path,
-            '-c:v', 'copy',
-            '-c:a', 'copy',
+            '-vf', f'scale=-2:{height}',
+            '-c:v', 'h264',
+            '-b:v', video_bitrate,
+            '-c:a', 'aac',
+            '-b:a', '128k',
             '-hls_time', '6',
             '-hls_playlist_type', 'vod',
             '-hls_segment_filename', segment_pattern,

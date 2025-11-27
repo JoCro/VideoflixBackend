@@ -9,7 +9,7 @@ from django.conf import settings
 from django.http import HttpResponse, FileResponse
 
 from ..models import Video
-from ..services import HLS_RESOLUTIONS, generate_hls_for_video
+from ..services import HLS_RESOLUTIONS
 from .serializers import VideoSerializer
 
 
@@ -55,11 +55,14 @@ class VideoStreamManifestAPIView(APIView):
 
         if not os.path.exists(m3u8_path):
             if not video.video_file:
-                return Response({"detail": "No video file for this movie"}, status=404)
-            generate_hls_for_video(video.id)
-
-        if not os.path.exists(m3u8_path):
-            return Response({"detail": "Manifest not found"}, status=404)
+                return Response(
+                    {"detail": "No video file for this movie"},
+                    status=404,
+                )
+            return Response(
+                {"detail": "HLS stream is still being generated."},
+                status=503,
+            )
 
         with open(m3u8_path, 'r') as f:
             content = f.read()
