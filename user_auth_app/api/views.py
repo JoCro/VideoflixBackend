@@ -41,6 +41,7 @@ class RegisterView(APIView):
                     "email": user.email,
                 },
                 "token": token,
+                "activation_link": activation_link,
             },
             status=status.HTTP_201_CREATED,
         )

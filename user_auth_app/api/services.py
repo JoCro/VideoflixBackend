@@ -46,14 +46,17 @@ def send_activation_email(user, request):
     plain_message = (
         f"Bitte aktiviere deinen Account über folgenden Link:\n{activation_link}")
 
-    send_mail(
-        subject=subject,
-        message=plain_message,
-        from_email=getattr(settings, 'DEFAULT_FROM_EMAIL',
-                           "no-reply@example.com"),
-        recipient_list=[user.email],
-        html_message=html_message,
-    )
+    try:
+        send_mail(
+            subject=subject,
+            message=plain_message,
+            from_email=getattr(settings, 'DEFAULT_FROM_EMAIL',
+                               "no-reply@example.com"),
+            recipient_list=[user.email],
+            html_message=html_message,
+        )
+    except Exception as e:
+        print(f"[EMAIL] failed to send activation email to {user.email}: {e}")
 
     return token, uidb64, activation_link
 
@@ -93,12 +96,16 @@ def send_password_reset_email(user, request):
         },
     )
 
-    send_mail(
-        subject=subject,
-        message=plain_message,
-        from_email=getattr(settings, "DEFAULT_FROM_EMAIL",
-                           "no-reply@example.com"),
-        recipient_list=[user.email],
-        html_message=html_message,
-    )
+    try:
+        send_mail(
+            subject=subject,
+            message=plain_message,
+            from_email=getattr(settings, "DEFAULT_FROM_EMAIL",
+                               "no-reply@example.com"),
+            recipient_list=[user.email],
+            html_message=html_message,
+        )
+    except Exception as e:
+        print(
+            f"[EMAIL] Failed to send password reset mail to {user.email}: {e}")
     return uidb64, token, reset_link
