@@ -117,21 +117,6 @@ All backend logic works entirely inside containers.
 git clone https://github.com/JoCro/VideoflixBackend.git
 ```
 
-### 2️⃣ Create a virtual environment
-
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-### 3️⃣ Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
 ### 2️⃣ Create your .env file
 
 - Duplicate the template: **cp .env.template .env**
