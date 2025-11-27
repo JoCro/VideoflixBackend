@@ -3,7 +3,7 @@ from django.dispatch import receiver
 from django_rq import get_queue
 
 from .models import Video
-from .services import generate_hls_for_video, delete_hls_for_video
+from .api.services import generate_hls_for_video, delete_hls_for_video
 
 
 @receiver(post_save, sender=Video)

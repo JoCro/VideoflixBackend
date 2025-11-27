@@ -69,10 +69,7 @@ def generate_hls_for_video(video_id: int):
 
 
 def delete_hls_for_video(video_id: int):
-    """
-    Deletes the complete HLS-Tree of a video.
-    MEDIA_ROOT/hls/<video_id>/
-    """
+
     hls_root = os.path.join(settings.MEDIA_ROOT, 'hls', str(video_id))
     if os.path.isdir(hls_root):
         shutil.rmtree(hls_root)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Video
-from .services import generate_hls_for_video
+from .api.services import generate_hls_for_video
 
 # Register your models here.
 

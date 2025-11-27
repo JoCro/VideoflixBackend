@@ -9,7 +9,7 @@ from django.conf import settings
 from django.http import HttpResponse, FileResponse
 
 from ..models import Video
-from ..services import HLS_RESOLUTIONS
+from .services import HLS_RESOLUTIONS
 from .serializers import VideoSerializer
 
 

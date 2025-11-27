@@ -22,9 +22,6 @@ class VideoSerializer(serializers.ModelSerializer):
         ]
 
     def get_thumbnail_url(self, obj):
-        """
-        Returns the full URL for the thumbnail image.
-        """
 
         request = self.context.get('request')
         if obj.thumbnail and hasattr(obj.thumbnail, 'url'):
